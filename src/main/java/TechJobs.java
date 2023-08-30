@@ -24,11 +24,6 @@ public class TechJobs {
 
         System.out.println("Welcome to LaunchCode's TechJobs App!");
 
-//        System.out.println("*****");
-//        columnChoices.forEach((key, value) -> System.out.println(key + " : " + value));
-//        System.out.println("*****\n");
-
-
 
 
         // Allow the user to search until they manually quit
@@ -123,10 +118,50 @@ public class TechJobs {
 
     // Print a list of jobs
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
+
+
+        for (HashMap<String, String> someJob : someJobs) {
+            System.out.println("*****");
+            someJob.forEach((key, value) -> System.out.println(key + ": " + value));
+            System.out.println("*****\n");
+        }
+
+//        for (int i = 0; i < someJobs.size(); i++) {
+//            System.out.println("*****");
+//            someJobs.get(i).forEach((key, value) -> System.out.println(key + ": " + value));
+//            System.out.println("*****\n");
+//        }
+
+
+        if (someJobs.isEmpty()) {
+            System.out.println("No Results");
+        }
+
+
+    }
+}
+
+//            HashMap<String, String> listing = new HashMap<>();
+//            listing.put("test", "one");
+//            listing.put("tests", "two");
+//        Set<Map.Entry<String, String> > entrySet
+//                = listing.entrySet();
+//        System.out.println("Entry Set: " + entrySet);
+//            System.out.println(listing.values());
+
+
+
+
+
+//        HashMap<String, String> listing = new HashMap<>();
+//        String jobKey;
+//        String jobValue;
+//        someJobs.forEach(listing.put(jobKey, jobValue));
+
 //        for (String key : someJobs.get(1).keySet()) {
 //        }
-        String[] listing = new String[someJobs.size()];
-        someJobs.toArray(listing);
+//        String[] listing = new String[someJobs.size()];
+//        someJobs.toArray(listing);
 //         System.out.println(Arrays.toString(listing));
 
 //            HashMap<String, String> listing = new HashMap<>();
@@ -135,16 +170,12 @@ public class TechJobs {
 //                listing.put(jobKey, jobValue);
 
 //        System.out.println("printJobs is not implemented yet");
-//        System.out.println("*****");
-//        listing.forEach((key, value) -> System.out.println(key + " : " + value));
-//        System.out.println("*****\n");
+//
 
-
-
-
-    }
-}
-
+//        System.out.println(someJobs.get(i));
+//            Set<Map.Entry<String, String> > entrySet
+//                    = listing.entrySet();
+//            System.out.println("Entry Set: " + entrySet);
 
 //            HashMap<String, String> data1 = new HashMap<String, String>();
 //            data1.put("0",new Integer(1));
