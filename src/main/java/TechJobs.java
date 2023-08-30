@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 /**
  * Created by LaunchCode
@@ -26,6 +23,13 @@ public class TechJobs {
         actionChoices.put("list", "List");
 
         System.out.println("Welcome to LaunchCode's TechJobs App!");
+
+//        System.out.println("*****");
+//        columnChoices.forEach((key, value) -> System.out.println(key + " : " + value));
+//        System.out.println("*****\n");
+
+
+
 
         // Allow the user to search until they manually quit
         while (true) {
@@ -119,7 +123,148 @@ public class TechJobs {
 
     // Print a list of jobs
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
+//        for (String key : someJobs.get(1).keySet()) {
+//        }
+        String[] listing = new String[someJobs.size()];
+        someJobs.toArray(listing);
+//         System.out.println(Arrays.toString(listing));
 
-        System.out.println("printJobs is not implemented yet");
+//            HashMap<String, String> listing = new HashMap<>();
+//            String jobKey = someJobs.toString();
+//            String jobValue = "test";
+//                listing.put(jobKey, jobValue);
+
+//        System.out.println("printJobs is not implemented yet");
+//        System.out.println("*****");
+//        listing.forEach((key, value) -> System.out.println(key + " : " + value));
+//        System.out.println("*****\n");
+
+
+
+
     }
 }
+
+
+//            HashMap<String, String> data1 = new HashMap<String, String>();
+//            data1.put("0",new Integer(1));
+//            data1.put("1",new Integer(2));
+//            data1.put("2",new Integer(3));
+//            data1.put("3",new Integer(4));
+//
+//            HashMap<String, Integer> data2 = new HashMap<String, Integer>();
+//            data1.put("10",new Integer(10));
+//            data1.put("11",new Integer(20));
+//            data1.put("12",new Integer(30));
+//            data1.put("13",new Integer(40));
+//
+//            someJobs.add(data1);
+//            someJobs.add(data2);
+//
+//
+//            for (int a =0; a<someJobs.size();a++)
+//            {
+//                HashMap<String, Integer> tmpData = (HashMap<String, Integer>) someJobs.get(a);
+//                Set<String> key = tmpData.keySet();
+//                Iterator it = key.iterator();
+//                while (it.hasNext()) {
+//                    String hmKey = (String)it.next();
+//                    Integer hmData = (Integer) tmpData.get(hmKey);
+//
+//                    System.out.println("Key: "+hmKey +" & Data: "+hmData);
+//                    it.remove(); // avoids a ConcurrentModificationException
+//                }
+//
+//            }
+
+
+
+
+
+
+
+
+//        for (Map.Entry<String, String> job : someJobs.entrySet()) {
+//            System.out.println(job.getKey() + " (" + job.getValue() + ")");
+////            sum += student.getValue();
+//        }
+
+
+
+
+//        ArrayList<HashMap<String, String>> test = new ArrayList<HashMap<String, String>>();
+//        HashMap<String, String> n = new HashMap<>();
+//        n.put("a", "a");
+//        n.put("b", "b");
+//        someJobs.add(n);
+//
+//        HashMap<String, String> m = someJobs.get(0);//it will get the first HashMap Stored in array list
+//
+//        String strArr[] = new String[m.size()];
+//        int i = 0;
+//        for (HashMap<String, String> hash : someJobs) {
+//            for (String current : hash.values()) {
+//                strArr[i] = current;
+//                i++;
+//            }
+//        }
+//        System.out.println(n);
+
+
+
+
+
+//        ArrayList<HashMap<String, String>> test = new ArrayList<>();
+//        String sum = "";
+//        for (HashMap<String, String> hash : someJobs) {
+//            for (String current : hash.values()) {
+//                sum = sum + current + "<#>";
+//            }
+//        }
+//        String[] arr = sum.split("<#>");
+//        System.out.println(arr);
+
+
+
+//        for (Map.Entry<String, String> ee : someJobs.entrySet()) {
+//            String key = ee.getKey();
+//            String values = ee.getValue();
+//
+//        }
+//        System.out.println(JobData.findAll(getUserSelection("enterprise"));
+
+
+//        System.out.println(JobData.findAll(ArrayList<String> values));
+
+
+
+
+//        ArrayList<String> test = new ArrayList<>();
+//
+//        for (Map.Entry<String, String> entry: JobData.findAll()) {
+//            System.out.println(entry.getKey());
+//            System.out.println(entry.getValue());
+//        }
+
+//        Set<Map.Entry<String,Integer>> s = couliu.entrySet();
+//        for (Map.Entry<String, String> columnChoices
+
+
+
+
+//        System.out.println(JobData.findAll());
+//        for (Map.Entry<String, String> jobs : jobs.entrySet()) {
+//            System.out.println(someJobs.getKey() + " :" + someJobs.getValue() + ")");
+//            sum += student.getValue();
+//        }
+//       need to map key + ": " + value
+//        need to print ***** on top and bottom
+
+
+//        System.out.println(`*****
+//        position type: Data Scientist / Business Intelligence
+//        name: Sr. IT Analyst (Data/BI)
+//        employer: Bull Moose Industries
+//        location: Saint Louis
+//        core competency: Statistical Analysis
+//*****`);
