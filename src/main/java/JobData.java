@@ -69,6 +69,7 @@ public class JobData {
         // load data, if not already loaded
         loadData();
 
+
         ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
 
         for (HashMap<String, String> row : allJobs) {
@@ -79,6 +80,7 @@ public class JobData {
                 jobs.add(row);
             }
         }
+
 
         return jobs;
     }
@@ -94,8 +96,24 @@ public class JobData {
         // load data, if not already loaded
         loadData();
 
-        // TODO - implement this method
-        return null;
+//trying to match the char value inside of the hash map inside of the array list, then return then arraylist for print jobs
+        ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
+        for (HashMap<String, String> row : allJobs) {
+            if (row.toString().contains(value)) {
+//                System.out.println(row);
+//                String str = row.toString();
+////                String aValue = row.get(value);
+////                System.out.println(jobs);
+////                if (str.equals(value)) {
+//                if (str.contains(value)) {
+//                    System.out.println(row);
+//                    System.out.println(str);
+                    jobs.add(row);
+//                }
+            }
+        }
+        return jobs;
+
     }
 
     /**
