@@ -22,7 +22,7 @@ public class TechJobs {
         actionChoices.put("search", "Search");
         actionChoices.put("list", "List");
 
-        System.out.println("Welcome to LaunchCode's TechJobs App!");
+        System.out.println("Welcome to LaunchCode's TechJobs App!\n");
 
 
 
@@ -35,7 +35,7 @@ public class TechJobs {
                 break;
             } else if (actionChoice.equals("list")) {
 
-                String columnChoice = getUserSelection("List", columnChoices);
+                String columnChoice = getUserSelection("\nList", columnChoices);
 
                 if (columnChoice.equals("all")) {
                     printJobs(JobData.findAll());
@@ -43,7 +43,7 @@ public class TechJobs {
 
                     ArrayList<String> results = JobData.findAll(columnChoice);
 
-                    System.out.println("\n*** All " + columnChoices.get(columnChoice) + " Values ***");
+                    System.out.println("\n*** All " + columnChoices.get(columnChoice) + " Values ***\n");
 
                     // Print list of skills, employers, etc
                     for (String item : results) {
@@ -54,7 +54,7 @@ public class TechJobs {
             } else { // choice is "search"
 
                 // How does the user want to search (e.g. by skill or employer)
-                String searchField = getUserSelection("Search by:", columnChoices);
+                String searchField = getUserSelection("\nSearch by:", columnChoices);
 
                 // What is their search term?
                 System.out.println("\nSearch term:");
@@ -64,7 +64,11 @@ public class TechJobs {
                     printJobs(JobData.findByValue(searchTerm));
                 } else {
                     printJobs(JobData.findByColumnAndValue(searchField, searchTerm));
+
+
                 }
+
+
             }
         }
     }
@@ -86,7 +90,7 @@ public class TechJobs {
 
         do {
 
-            System.out.println("\n" + menuHeader);
+            System.out.println(menuHeader);
 
             // Print available choices
             for (int j = 0; j < choiceKeys.length; j++) {
@@ -119,12 +123,41 @@ public class TechJobs {
     // Print a list of jobs
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
 
-
-        for (HashMap<String, String> someJob : someJobs) {
-            System.out.println("*****");
-            someJob.forEach((key, value) -> System.out.println(key + ": " + value));
-            System.out.println("*****\n");
+        if (someJobs.isEmpty()) {
+                System.out.println("No Results");
+        } else {
+            for (HashMap<String, String> someJob : someJobs) {
+                    System.out.println("*****");
+                    someJob.forEach((key, value) -> System.out.println(key + ": " + value));
+                    System.out.println("*****\n");
+            }
         }
+
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//                    someJob.forEach((key, value) -> System.out.println(JobData.findByColumnAndValue(key, value).contains(someJob)));
+//                    System.out.println(JobData.findByColumnAndValue(in, in.next()));
+
 
 //        for (int i = 0; i < someJobs.size(); i++) {
 //            System.out.println("*****");
@@ -132,14 +165,13 @@ public class TechJobs {
 //            System.out.println("*****\n");
 //        }
 
-
-        if (someJobs.isEmpty()) {
-            System.out.println("No Results");
-        }
+//                    System.out.println("No Results");
 
 
-    }
-}
+
+
+
+
 
 //            HashMap<String, String> listing = new HashMap<>();
 //            listing.put("test", "one");
