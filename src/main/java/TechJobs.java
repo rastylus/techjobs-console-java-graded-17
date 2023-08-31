@@ -120,10 +120,14 @@ public class TechJobs {
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
 
 
-        for (HashMap<String, String> someJob : someJobs) {
-            System.out.println("*****");
-            someJob.forEach((key, value) -> System.out.println(key + ": " + value));
-            System.out.println("*****\n");
+        if (someJobs.isEmpty()) {
+            System.out.print("No Results");
+        } else {
+            for (HashMap<String, String> someJob : someJobs) {
+                System.out.println("\n*****");
+                someJob.forEach((key, value) -> System.out.println(key + ": " + value));
+                System.out.println("*****");
+            }
         }
 
 //        for (int i = 0; i < someJobs.size(); i++) {
@@ -133,9 +137,6 @@ public class TechJobs {
 //        }
 
 
-        if (someJobs.isEmpty()) {
-            System.out.println("No Results");
-        }
 
 
     }
