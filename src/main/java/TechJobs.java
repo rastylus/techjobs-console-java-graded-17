@@ -130,6 +130,7 @@ public class TechJobs {
             }
         }
 
+
 //        for (int i = 0; i < someJobs.size(); i++) {
 //            System.out.println("*****");
 //            someJobs.get(i).forEach((key, value) -> System.out.println(key + ": " + value));

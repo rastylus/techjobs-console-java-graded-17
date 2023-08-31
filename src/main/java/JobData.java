@@ -105,6 +105,7 @@ public class JobData {
 //                    System.out.println(row);
 //                    System.out.println(str);
                 jobs.add(row);
+
 //                }
             }
         }
