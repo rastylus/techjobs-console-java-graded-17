@@ -70,12 +70,16 @@ public class JobData {
         loadData();
 
         ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
-
+//        System.out.println(value);
+//        System.out.println(column);
         for (HashMap<String, String> row : allJobs) {
 
             String aValue = row.get(column);
+            String noSpace = row.toString().replace(" ", "").toLowerCase();
+//        System.out.println("a value" + aValue);
+//        System.out.println("noSpace" + noSpace);
 
-            if (aValue.contains(value)) {
+            if (noSpace.contains(value)) {
                 jobs.add(row);
             }
         }
@@ -94,8 +98,14 @@ public class JobData {
         // load data, if not already loaded
         loadData();
         ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
+//            System.out.println(value + "test");
+//        System.out.println(value.toUpperCase() + "test");
         for (HashMap<String, String> row : allJobs) {
-            if (row.toString().contains(value)) {
+            String noSpace = row.toString().replace(" ", "").toLowerCase();
+//
+//            String noSpace = row.toString().replace(" ", "").toLowerCase();
+//            if (row.toString().toLowerCase().contains(value.replace(" ", "").toLowerCase())) {
+            if (noSpace.contains(value)) {
 //                System.out.println(row);
 //                String str = row.toString();
 ////                String aValue = row.get(value);

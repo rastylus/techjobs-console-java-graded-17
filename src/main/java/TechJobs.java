@@ -58,11 +58,15 @@ public class TechJobs {
 
                 // What is their search term?
                 System.out.println("\nSearch term:");
-                String searchTerm = in.nextLine();
+//                String searchTerm = in.nextLine();
+                String searchTerm = in.nextLine().replace(" ", "").toLowerCase();
+//                System.out.println(searchTerm);
+//                String searchTerm = in.nextLine().replaceAll("\\s", "");
 
                 if (searchField.equals("all")) {
                     printJobs(JobData.findByValue(searchTerm));
                 } else {
+//                    System.out.println(searchField + searchTerm);
                     printJobs(JobData.findByColumnAndValue(searchField, searchTerm));
                 }
             }
@@ -130,18 +134,13 @@ public class TechJobs {
             }
         }
 
-
+    }
+}
 //        for (int i = 0; i < someJobs.size(); i++) {
 //            System.out.println("*****");
 //            someJobs.get(i).forEach((key, value) -> System.out.println(key + ": " + value));
 //            System.out.println("*****\n");
 //        }
-
-
-
-
-    }
-}
 
 //            HashMap<String, String> listing = new HashMap<>();
 //            listing.put("test", "one");
