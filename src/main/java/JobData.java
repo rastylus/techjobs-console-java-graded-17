@@ -50,7 +50,9 @@ public class JobData {
         // load data, if not already loaded
         loadData();
 
-        return allJobs;
+        ArrayList<HashMap<String, String>> allJobsCopy = (ArrayList<HashMap<String, String>>)allJobs.clone();
+
+        return allJobsCopy;
     }
 
     /**
@@ -70,14 +72,12 @@ public class JobData {
         loadData();
 
         ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
-//        System.out.println(value);
-//        System.out.println(column);
+
         for (HashMap<String, String> row : allJobs) {
 
-            String aValue = row.get(column);
+//            String aValue = row.get(column);
             String noSpace = row.toString().replace(" ", "").toLowerCase();
-//        System.out.println("a value" + aValue);
-//        System.out.println("noSpace" + noSpace);
+
 
             if (noSpace.contains(value)) {
                 jobs.add(row);
@@ -98,25 +98,14 @@ public class JobData {
         // load data, if not already loaded
         loadData();
         ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
-//            System.out.println(value + "test");
-//        System.out.println(value.toUpperCase() + "test");
+
         for (HashMap<String, String> row : allJobs) {
             String noSpace = row.toString().replace(" ", "").toLowerCase();
-//
-//            String noSpace = row.toString().replace(" ", "").toLowerCase();
-//            if (row.toString().toLowerCase().contains(value.replace(" ", "").toLowerCase())) {
+
             if (noSpace.contains(value)) {
-//                System.out.println(row);
-//                String str = row.toString();
-////                String aValue = row.get(value);
-////                System.out.println(jobs);
-////                if (str.equals(value)) {
-//                if (str.contains(value)) {
-//                    System.out.println(row);
-//                    System.out.println(str);
+
                 jobs.add(row);
 
-//                }
             }
         }
         return jobs;
